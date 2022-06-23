@@ -1,18 +1,13 @@
-/* eslint-disable new-cap */
-const createError = require("http-errors");
-const contacts = require("../../models/contacts");
+const {Contact} = require("../../models");
 
 const removeContact = async (req, res, next) => {
-    try {
-      const { contactId } = req.params;
-      const result = await contacts.removeContact(contactId);
-      if(!result){
-        throw new createError(404)
+      try {
+        const { contactId } = req.params;
+        await Contact.findByIdAndRemove(contactId);
+        res.status(200).json({message: "contact deleted"})
+      } catch (error) {
+        next(error)
       }
-      res.status(200).json({message: "contact deleted"})
-    } catch (error) {
-      next(error)
     }
-  }
-
-  module.exports = removeContact;
+  
+    module.exports = removeContact;
