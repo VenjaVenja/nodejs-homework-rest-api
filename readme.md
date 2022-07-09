@@ -7,9 +7,9 @@
 
 Для кожної домашньої роботи створюйте свою гілку.
 
-- hw02
-- hw03
-- hw04
+- hw02 - completed
+- hw03 - completed
+- hw04 - completed
 - hw05
 - hw06
 
