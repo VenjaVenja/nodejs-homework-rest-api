@@ -1,5 +1,5 @@
 /* eslint-disable new-cap */
-const {BadRequest, Unauthorized} = require("http-errors");
+const {BadRequest, Unauthorized, NotFound} = require("http-errors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -22,6 +22,9 @@ const logIn = async (req, res, next) => {
     if(!passCompare){
         throw new Unauthorized("Email or password is wrong")
     } 
+    if(!user.verify){
+      throw new NotFound("User not verify")
+    }
     const payload ={
         id: user._id
     };
