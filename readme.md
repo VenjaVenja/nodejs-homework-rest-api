@@ -10,7 +10,7 @@
 - hw02 - completed
 - hw03 - completed
 - hw04 - completed
-- hw05
+- hw05 - completed
 - hw06
 
 Кожна нова гілка для др повинна робитися з master
